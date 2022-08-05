@@ -1,50 +1,35 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
-
+import { H1 } from "react-bootstrap";
+import logo from "./assets/logo.png";
 function App() {
-  const [backgroudColor, setBackgroundColor] = useState("red");
   const [animationComplete, setAnimationComplete] = useState(false);
   const completeAnimation = () => {
     setAnimationComplete(true);
     document.body.style.overflowY = "auto";
   };
-  // const bounceTransition = {
-  //   y: {
-  //     duration: 0.4,
-  //     yoyo: Infinity,
-  //     ease: "easeOut",
-  //   },
-  //   backgroundColor: {
-  //     duration: 0,
-  //     yoyo: Infinity,
-  //     ease: "easeOut",
-  //     repeatDelay: 0.8,
-  //   },
-  // };
   useEffect(() => {
     // Inner Page height for mobile devices
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-
     // GSAP animation
     let tl = gsap.timeline();
     const homeAnimation = (animation) => {
-      tl.to(".ballIntro", {
+      tl.to(".ball-intro", {
         duration: 2,
         y: "100vh",
         ease: "bounce.out",
       })
-        .to(".ballIntro", {
-          duration: 1,
+        .to(".ball-intro", {
+          duration: 0.7,
           scale: 30,
           ease: "power3.out",
           onComplete: animation,
         })
         .from(".after-animation", {
-          duration: 0.8,
+          duration: 0.3,
           opacity: 0,
           ease: "power3.out",
         });
@@ -53,14 +38,21 @@ function App() {
   }, []);
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      {animationComplete === false && (
-        <div className="Intro">
-          <motion.div className="ballIntro"></motion.div>
+    <>
+      {/* <AnimatePresence exitBeforeEnter>
+        {animationComplete === false && (
+          <div className="intro">
+            <motion.div className="ball-intro"></motion.div>
+          </div>
+        )}
+        <div className="after-animation">
+          <h1 className="brand-name text-center">Karma</h1>
         </div>
-      )}
-      <div className="after-animation"></div>
-    </AnimatePresence>
+      </AnimatePresence> */}
+      <div>
+        <img className="brand-img" src={logo} />
+      </div>
+    </>
   );
 }
 
