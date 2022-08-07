@@ -1,9 +1,12 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
-import { H1 } from "react-bootstrap";
 import logo from "./assets/logo.png";
+import NavBar from "./Components/NavBar";
+import PromoBar from "./Components/PromoBar";
+
 function App() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const completeAnimation = () => {
@@ -50,7 +53,9 @@ function App() {
         </div>
       </AnimatePresence> */}
       <div>
-        <img className="brand-img" src={logo} />
+        <PromoBar />
+        <img className="brand-img" src={logo} alt="Logo" />
+        <NavBar />
       </div>
     </>
   );

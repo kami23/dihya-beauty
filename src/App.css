@@ -41,7 +41,30 @@ body {
   }
 }
 
-/* Brand name */
+/* Promo bar*/
+.promo-bar {
+  background-color: pink;
+  color: black;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding: 0.25em 5px;
+}
+
+@media (min-width: 768px) {
+  .promo-bar {
+    font-size: 0.75rem;
+  }
+}
+
+.promo-bar p {
+  margin-block-start: auto;
+  margin-block-end: auto;
+  text-transform: uppercase;
+}
+/* Bran
+d name */
 .brand-name {
   font-family: "fantasy";
   align-content: center;
@@ -50,7 +73,23 @@ body {
 .brand-img {
   display: block;
   margin: 0 auto;
-  width: 30%;
+  width: 15%;
+  margin-top: 5px;
 }
 
 /* NavBar */
+.navbarContainer {
+  font-family: "Quicksand", sans-serif;
+}
+.nav-link :hover{
+  background-color: bisque!important;
+}
+
+.dropdown-div {
+  background-color: aqua;
+}
+.dropdown-menu{
+  border-radius: 0% !important;
+  border: 0ch !important;
+  padding:0% !important;
+}
